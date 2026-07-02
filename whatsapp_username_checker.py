@@ -593,7 +593,8 @@ class UsernameOrchestrator:
         await self.checker.close()
 
 
-from fastapi import FastAPI, Query, HTTPException
+from collections import defaultdict
+from fastapi import FastAPI, Query, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, FileResponse
 from fastapi.staticfiles import StaticFiles
@@ -624,6 +625,46 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+# ── Security headers middleware ──────────────────────────────────────────────
+_SECURITY_HEADERS = {
+    "X-Content-Type-Options": "nosniff",
+    "X-Frame-Options": "DENY",
+    "Referrer-Policy": "strict-origin-when-cross-origin",
+    "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+    "X-XSS-Protection": "1; mode=block",
+}
+
+
+@app.middleware("http")
+async def add_security_headers(request: Request, call_next):
+    response = await call_next(request)
+    for header, value in _SECURITY_HEADERS.items():
+        response.headers[header] = value
+    # HSTS only on HTTPS (Render always terminates TLS)
+    if request.headers.get("x-forwarded-proto") == "https":
+        response.headers["Strict-Transport-Security"] = "max-age=31536000; includeSubDomains"
+    return response
+
+
+# ── Per-IP rate limiter for /smart-check (protects Groq token budget) ────────
+_rate_store: dict[str, list[float]] = defaultdict(list)
+_RATE_LIMIT = 30      # max requests
+_RATE_WINDOW = 60.0   # per 60 seconds
+
+
+def _check_rate_limit(ip: str) -> bool:
+    """Return True if request is allowed, False if rate-limited."""
+    now = time.monotonic()
+    timestamps = _rate_store[ip]
+    # Purge old entries
+    _rate_store[ip] = [t for t in timestamps if now - t < _RATE_WINDOW]
+    if len(_rate_store[ip]) >= _RATE_LIMIT:
+        return False
+    _rate_store[ip].append(now)
+    return True
+
 
 # Serve static files (CSS, JS)
 _static_dir = Path(__file__).resolve().parent / "static"
@@ -720,6 +761,7 @@ async def validate_only(username: str):
 
 @app.get("/smart-check", summary="Smart check: username, niche, or both")
 async def smart_check(
+    request: Request,
     username: str = Query("", description="Username to check (optional)"),
     niche: str = Query("", description="Niche for suggestions (optional)"),
     limit: int = Query(10, ge=1, le=25, description="Max suggestions to return (default 10, max 25)"),
@@ -727,8 +769,16 @@ async def smart_check(
 ):
     """
     Smart endpoint — provide username, niche, or both + optional custom prompt.
-    Generates 3× limit from Groq, checks ALL against WhatsApp, returns verified results.
+    Rate-limited: 30 requests/minute per IP to protect Groq token budget.
     """
+    # Rate limit check
+    client_ip = request.headers.get("x-forwarded-for", request.client.host if request.client else "unknown").split(",")[0].strip()
+    if not _check_rate_limit(client_ip):
+        raise HTTPException(
+            status_code=429,
+            detail="Rate limit exceeded — max 30 requests per minute. Please wait and try again.",
+        )
+
     if not username.strip() and not niche.strip() and not prompt.strip():
         raise HTTPException(status_code=422, detail="Provide at least a username, niche, or prompt")
     orch: UsernameOrchestrator = app.state.orchestrator

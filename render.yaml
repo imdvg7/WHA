@@ -3,6 +3,8 @@ services:
     name: whatsapp-username-checker
     runtime: docker
     plan: free
+    region: oregon
+    autoDeploy: true
     healthCheckPath: /health
     envVars:
       - key: GROQ_API_KEYS
