@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: whatsapp-username-checker
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: GROQ_API_KEYS
+        sync: false

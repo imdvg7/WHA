@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Disallow: /docs
+Disallow: /redoc
+Disallow: /openapi.json
+Disallow: /health
+Disallow: /check/
+Disallow: /suggest/
+Disallow: /validate/
+Disallow: /smart-check
+
+Sitemap: https://whatsapp-username-checker.onrender.com/sitemap.xml

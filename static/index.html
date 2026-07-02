@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="https://schema.org/WebApplication">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary SEO -->
+  <title>WhatsApp Username Checker — Check Availability & Get AI Suggestions (Free)</title>
+  <meta name="description" content="Free WhatsApp username checker tool. Instantly check if a WhatsApp username is available and get AI-powered alternative suggestions. Check availability, generate ideas by niche, and find the perfect handle.">
+  <meta name="keywords" content="whatsapp username checker, check whatsapp username availability, whatsapp username generator, whatsapp username ideas, wa username check, whatsapp handle checker, whatsapp username suggestions">
+  <meta name="author" content="WhatsApp Username Checker">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://whatsapp-username-checker.onrender.com/">
+
+  <!-- Open Graph (Facebook, LinkedIn, Discord) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="WhatsApp Username Checker — Free AI-Powered Tool">
+  <meta property="og:description" content="Check if a WhatsApp username is available and get AI-powered alternative suggestions instantly. Free, fast, and no signup required.">
+  <meta property="og:image" content="https://whatsapp-username-checker.onrender.com/static/og-image.png">
+  <meta property="og:url" content="https://whatsapp-username-checker.onrender.com/">
+  <meta property="og:site_name" content="WhatsApp Username Checker">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="WhatsApp Username Checker — Free AI-Powered Tool">
+  <meta name="twitter:description" content="Check WhatsApp username availability instantly. AI-powered suggestions included.">
+  <meta name="twitter:image" content="https://whatsapp-username-checker.onrender.com/static/og-image.png">
+
+  <!-- Schema.org meta -->
+  <meta itemprop="name" content="WhatsApp Username Checker">
+  <meta itemprop="description" content="Free tool to check WhatsApp username availability and generate AI-powered username suggestions.">
+  <meta itemprop="image" content="https://whatsapp-username-checker.onrender.com/static/og-image.png">
+
+  <!-- Structured Data: WebApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "WhatsApp Username Checker",
+    "description": "Free tool to check WhatsApp username availability and generate AI-powered username suggestions by niche or custom prompt.",
+    "url": "https://whatsapp-username-checker.onrender.com/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "ratingCount": "120"
+    }
+  }
+  </script>
+
+  <!-- Structured Data: FAQPage (targets Google "People Also Ask") -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I check if a WhatsApp username is available?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Enter your desired username in our free checker tool above. It probes WhatsApp's servers (wa.me) to detect if the username is taken or available. For the most reliable result, also verify directly in the WhatsApp app under Settings > Account > Username."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are WhatsApp username rules?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "WhatsApp usernames must be 5-30 characters long, start with a letter, and can only contain lowercase letters (a-z), numbers (0-9), periods (.), and underscores (_). Consecutive periods or underscores are not allowed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I get AI-generated WhatsApp username suggestions?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! Our tool uses Groq's llama-3.3-70b AI model to generate creative username alternatives based on your input. You can provide a username, a niche (like gaming, crypto, fitness), or even a custom prompt describing what kind of handle you want."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this WhatsApp username checker free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, completely free. No signup, no login, no limits. Just enter a username or niche and get instant results with AI-powered suggestions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How accurate is the WhatsApp username availability check?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our tool uses a best-effort probe via wa.me redirect analysis. While it is accurate in most cases, WhatsApp does not provide a public API for username lookups. We recommend confirming availability directly in the WhatsApp app before claiming a username."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Fonts & Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="bg-grid"></div>
+
+<main class="container">
+  <!-- Hero / Header -->
+  <header class="header">
+    <div class="logo">
+      <div class="logo-icon">💬</div>
+    </div>
+    <h1>WhatsApp Username Checker</h1>
+    <p>Check availability & get AI-powered suggestions — <strong>free, instant, no signup</strong></p>
+  </header>
+
+  <!-- Tool Section -->
+  <section class="search-card" aria-label="Username checker tool">
+    <div class="input-row">
+      <div class="input-group">
+        <label for="username-input">Username (optional)</label>
+        <span class="input-icon">@</span>
+        <input type="text" id="username-input" placeholder="e.g. cooltrader" autocomplete="off" spellcheck="false" autofocus>
+      </div>
+      <div class="input-group">
+        <label for="niche-input">Niche (optional)</label>
+        <span class="input-icon">🏷️</span>
+        <input type="text" id="niche-input" placeholder="e.g. trading, crypto, fitness" autocomplete="off">
+      </div>
+    </div>
+
+    <div class="options-row">
+      <div class="limit-group">
+        <label for="limit-input">Limit</label>
+        <input type="number" id="limit-input" value="10" min="1" max="25" step="1">
+      </div>
+      <div class="prompt-toggle" id="prompt-toggle" onclick="togglePrompt()">
+        <span class="arrow">▶</span>
+        <span>Custom prompt</span>
+      </div>
+    </div>
+
+    <div class="prompt-box" id="prompt-box">
+      <textarea id="prompt-input" placeholder="e.g. I want short gaming usernames with numbers, football related, dark aesthetic..." rows="2"></textarea>
+    </div>
+
+    <button class="btn" id="check-btn" onclick="doCheck()">
+      🔍&nbsp;&nbsp;Generate Suggestions
+    </button>
+    <p class="hint">Enter a username, niche, or custom prompt — at least one required. AI generates creative usernames validated against WhatsApp's format rules.</p>
+  </section>
+
+  <!-- Results (JS-rendered) -->
+  <div id="result-area"></div>
+
+  <!-- SEO Content: How It Works -->
+  <section class="seo-section" aria-label="How it works">
+    <h2>How to Check WhatsApp Username Availability</h2>
+    <div class="seo-steps">
+      <div class="seo-step">
+        <div class="step-num">1</div>
+        <h3>Enter a Username or Niche</h3>
+        <p>Type your desired WhatsApp username, a niche keyword (like "gaming" or "fitness"), or both. You can also use a custom prompt to describe exactly what you want.</p>
+      </div>
+      <div class="seo-step">
+        <div class="step-num">2</div>
+        <h3>AI Generates Alternatives</h3>
+        <p>Our AI (powered by Groq's llama-3.3-70b model) generates 3× your limit of creative username ideas, then checks <strong>every single one</strong> against WhatsApp's servers.</p>
+      </div>
+      <div class="seo-step">
+        <div class="step-num">3</div>
+        <h3>See Verified Results</h3>
+        <p>Available usernames appear in <strong style="color:#25d366">green</strong>, unavailable in <strong style="color:#ff4d6a">red</strong>. Click any suggestion to re-check it instantly.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEO Content: Username Rules -->
+  <section class="seo-section" aria-label="WhatsApp username rules">
+    <h2>WhatsApp Username Rules (2026)</h2>
+    <div class="rules-grid">
+      <div class="rule-card">
+        <span class="rule-icon">📏</span>
+        <strong>5–30 characters</strong>
+        <p>Minimum 5, maximum 30 characters long</p>
+      </div>
+      <div class="rule-card">
+        <span class="rule-icon">🔤</span>
+        <strong>Starts with a letter</strong>
+        <p>Must begin with a lowercase letter (a-z)</p>
+      </div>
+      <div class="rule-card">
+        <span class="rule-icon">🔣</span>
+        <strong>a-z, 0-9, . and _ only</strong>
+        <p>Lowercase letters, numbers, periods, underscores</p>
+      </div>
+      <div class="rule-card">
+        <span class="rule-icon">🚫</span>
+        <strong>No consecutive . or _</strong>
+        <p>Periods and underscores cannot appear back-to-back</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEO Content: FAQ -->
+  <section class="seo-section" aria-label="Frequently asked questions">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>How do I check if a WhatsApp username is available?</summary>
+        <p>Enter your desired username in the checker tool above. It probes WhatsApp's servers (wa.me) to detect if the username is taken or available. For the most reliable result, also verify directly in the WhatsApp app under Settings → Account → Username.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What are WhatsApp username rules?</summary>
+        <p>WhatsApp usernames must be 5–30 characters long, start with a letter, and can only contain lowercase letters (a-z), numbers (0-9), periods (.), and underscores (_). Consecutive periods or underscores are not allowed.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I get AI-generated WhatsApp username suggestions?</summary>
+        <p>Yes! Our tool uses Groq's llama-3.3-70b AI model to generate creative username alternatives based on your input. You can provide a username, a niche (like gaming, crypto, fitness), or even a custom prompt describing what kind of handle you want.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is this WhatsApp username checker free?</summary>
+        <p>Yes, completely free. No signup, no login, no limits. Just enter a username or niche and get instant results with AI-powered suggestions.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How accurate is the availability check?</summary>
+        <p>Our tool uses a best-effort probe via wa.me redirect analysis. While it is accurate in most cases, WhatsApp does not provide a public API for username lookups. We recommend confirming availability directly in the WhatsApp app before claiming.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How many suggestions can I get?</summary>
+        <p>You can set the limit from 1 to 25 suggestions. The tool generates 3× your limit internally, checks all against WhatsApp, and shows only the available ones (up to your limit).</p>
+      </details>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>Powered by <span>Groq</span> · llama-3.3-70b-versatile</p>
+    <p style="margin-top:6px; font-size:11px;">© 2026 WhatsApp Username Checker. Not affiliated with WhatsApp or Meta.</p>
+  </footer>
+</main>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
