@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="google-site-verification" content="wJw2yCWqJ7shIUDt9zBTDktPwxDSexCWklCpRC5Ib3A" />
@@ -8,8 +9,10 @@
 
   <!-- Primary SEO -->
   <title>WhatsApp Username Checker — Check Availability & Get AI Suggestions (Free)</title>
-  <meta name="description" content="Free WhatsApp username checker tool. Instantly check if a WhatsApp username is available and get AI-powered alternative suggestions. Check availability, generate ideas by niche, and find the perfect handle.">
-  <meta name="keywords" content="whatsapp username checker, check whatsapp username availability, whatsapp username generator, whatsapp username ideas, wa username check, whatsapp handle checker, whatsapp username suggestions, whatsapp username ideas for gaming, cool whatsapp usernames, aesthetic whatsapp username, how to set whatsapp username, whatsapp username 2026">
+  <meta name="description"
+    content="Free WhatsApp username checker tool. Instantly check if a WhatsApp username is available and get AI-powered alternative suggestions. Check availability, generate ideas by niche, and find the perfect handle.">
+  <meta name="keywords"
+    content="whatsapp username checker, check whatsapp username availability, whatsapp username generator, whatsapp username ideas, wa username check, whatsapp handle checker, whatsapp username suggestions, whatsapp username ideas for gaming, cool whatsapp usernames, aesthetic whatsapp username, how to set whatsapp username, whatsapp username 2026, reserve whatsapp username, claim whatsapp username, whatsapp username taken, best whatsapp usernames available, short whatsapp username">
   <meta name="author" content="PickMyWA">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <link rel="canonical" href="https://pickmywa.onrender.com/">
@@ -21,7 +24,8 @@
   <!-- Open Graph (Facebook, LinkedIn, Discord) -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="WhatsApp Username Checker — Free AI-Powered Tool">
-  <meta property="og:description" content="Check if a WhatsApp username is available and get AI-powered alternative suggestions instantly. Free, fast, and no signup required.">
+  <meta property="og:description"
+    content="Check if a WhatsApp username is available and get AI-powered alternative suggestions instantly. Free, fast, and no signup required.">
   <meta property="og:image" content="https://pickmywa.onrender.com/static/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -32,7 +36,8 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="WhatsApp Username Checker — Free AI-Powered Tool">
-  <meta name="twitter:description" content="Check WhatsApp username availability instantly. AI-powered suggestions included. 100% free.">
+  <meta name="twitter:description"
+    content="Check WhatsApp username availability instantly. AI-powered suggestions included. 100% free.">
   <meta name="twitter:image" content="https://pickmywa.onrender.com/static/og-image.png">
 
 
@@ -203,345 +208,653 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" href="/static/style.css" as="style">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="/static/style.css">
 </head>
+
 <body>
 
-<div class="bg-grid"></div>
+  <div class="bg-grid"></div>
 
-<main class="container">
-  <!-- Hero / Header -->
-  <header class="header">
-    <div class="logo">
-      <div class="logo-icon">💬</div>
-    </div>
-    <h1>WhatsApp Username Checker</h1>
-    <p>Check availability & get AI-powered suggestions — <strong>free, instant, no signup</strong></p>
-  </header>
-
-  <!-- Tool Section -->
-  <section class="search-card" aria-label="Username checker tool">
-    <div class="input-row">
-      <div class="input-group">
-        <label for="username-input">Username (optional)</label>
-        <span class="input-icon">@</span>
-        <input type="text" id="username-input" placeholder="e.g. cooltrader" autocomplete="off" spellcheck="false" autofocus>
-      </div>
-      <div class="input-group">
-        <label for="niche-input">Niche (optional)</label>
-        <span class="input-icon">🏷️</span>
-        <input type="text" id="niche-input" placeholder="e.g. trading, crypto, fitness" autocomplete="off">
-      </div>
+  <main class="container">
+    <!-- Urgency Ticker -->
+    <div class="urgency-ticker">
+      <span class="ticker-dot"></span>
+      <span><strong id="claim-counter">2,847</strong> usernames claimed in the last hour — good ones are going
+        fast</span>
     </div>
 
-    <div class="options-row">
-      <div class="limit-group">
-        <label for="limit-input">Limit</label>
-        <input type="number" id="limit-input" value="10" min="1" max="25" step="1">
-      </div>
-      <div class="prompt-toggle" id="prompt-toggle" onclick="togglePrompt()">
-        <span class="arrow">▶</span>
-        <span>Custom prompt</span>
-      </div>
-    </div>
-
-    <div class="prompt-box" id="prompt-box">
-      <textarea id="prompt-input" placeholder="e.g. I want short gaming usernames with numbers, football related, dark aesthetic..." rows="2"></textarea>
-    </div>
-
-    <button class="btn" id="check-btn" onclick="doCheck()">
-      🔍&nbsp;&nbsp;Generate Suggestions
-    </button>
-    <p class="hint">Enter a username, niche, or custom prompt — at least one required. AI generates creative usernames validated against WhatsApp's format rules.</p>
-  </section>
-
-  <!-- Results (JS-rendered) -->
-  <div id="result-area"></div>
-
-  <!-- Inline disclaimer after results -->
-  <div class="inline-disclaimer">
-    <p>⚠️ <strong>Disclaimer:</strong> This is an AI-powered username <em>idea generator</em> — not an official WhatsApp service. Suggested usernames may already be taken. Always verify availability in the <strong>WhatsApp app</strong> (Settings → Account → Username). Not affiliated with WhatsApp or Meta.</p>
-  </div>
-
-  <!-- SEO Content: How It Works -->
-  <section class="seo-section" aria-label="How it works">
-    <h2>How to Find Your Perfect WhatsApp Username</h2>
-    <div class="seo-steps">
-      <div class="seo-step">
-        <div class="step-num">1</div>
-        <h3>Enter a Username or Niche</h3>
-        <p>Type your desired WhatsApp username, a niche keyword (like "gaming" or "fitness"), or both. You can also use a custom prompt to describe exactly what you want.</p>
-      </div>
-      <div class="seo-step">
-        <div class="step-num">2</div>
-        <h3>AI Generates Alternatives</h3>
-        <p>Our AI (powered by Groq's llama-3.3-70b model) generates creative username ideas, then validates <strong>every single one</strong> against WhatsApp's format rules.</p>
-      </div>
-      <div class="seo-step">
-        <div class="step-num">3</div>
-        <h3>Copy & Claim Your Username</h3>
-        <p>Click any suggestion to copy it. Then <strong>verify availability in the WhatsApp app</strong> (Settings → Account → Username) — our tool checks format rules, but only WhatsApp can confirm if a name is truly available.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- SEO Content: Username Ideas by Category (Interactive) -->
-  <section class="seo-section category-section" aria-label="WhatsApp username ideas by category">
-    <h2>Best WhatsApp Username Ideas by Category (2026)</h2>
-    <p class="section-intro">Looking for the perfect WhatsApp username? Browse our curated categories below and click <strong>"Generate More"</strong> to get AI-powered suggestions in any niche.</p>
-
-    <div class="category-grid">
-      <div class="category-card">
-        <span class="category-emoji">🎮</span>
-        <h3>Gaming</h3>
-        <p class="category-examples">shadow.striker · pixel.ninja · neon.blitz · frost.gamer · dark.phantom</p>
-        <button class="category-btn" onclick="fillNiche('gaming')">⚡ Generate Gaming Names</button>
-      </div>
-      <div class="category-card">
-        <span class="category-emoji">💼</span>
-        <h3>Business & Professional</h3>
-        <p class="category-examples">brand.studio · grow.digital · market.pulse · sales.edge · biz.craft</p>
-        <button class="category-btn" onclick="fillNiche('business professional')">⚡ Generate Business Names</button>
-      </div>
-      <div class="category-card">
-        <span class="category-emoji">📈</span>
-        <h3>Crypto & Trading</h3>
-        <p class="category-examples">defi.whale · chart.ninja · bull.signal · trade.monk · block.alpha</p>
-        <button class="category-btn" onclick="fillNiche('crypto trading finance')">⚡ Generate Crypto Names</button>
-      </div>
-      <div class="category-card">
-        <span class="category-emoji">🎨</span>
-        <h3>Aesthetic & Creative</h3>
-        <p class="category-examples">soft.aura · velvet.haze · lunar.mist · dream.pixel · silk.bloom</p>
-        <button class="category-btn" onclick="fillNiche('aesthetic creative artistic')">⚡ Generate Aesthetic Names</button>
-      </div>
-      <div class="category-card">
-        <span class="category-emoji">💪</span>
-        <h3>Fitness & Health</h3>
-        <p class="category-examples">iron.grind · flex.zone · lift.beast · core.power · gym.monk</p>
-        <button class="category-btn" onclick="fillNiche('fitness gym health')">⚡ Generate Fitness Names</button>
-      </div>
-      <div class="category-card">
-        <span class="category-emoji">😂</span>
-        <h3>Funny & Casual</h3>
-        <p class="category-examples">snack.lord · lazy.panda · meme.monk · chaos.vibes · nap.king</p>
-        <button class="category-btn" onclick="fillNiche('funny meme casual humorous')">⚡ Generate Funny Names</button>
-      </div>
-      <div class="category-card">
-        <span class="category-emoji">🎵</span>
-        <h3>Music & Entertainment</h3>
-        <p class="category-examples">bass.drop · vinyl.soul · beat.forge · echo.wave · rhythm.hex</p>
-        <button class="category-btn" onclick="fillNiche('music entertainment')">⚡ Generate Music Names</button>
-      </div>
-      <div class="category-card">
-        <span class="category-emoji">💻</span>
-        <h3>Tech & Developer</h3>
-        <p class="category-examples">code.ninja · dev.pulse · byte.craft · hack.flow · stack.zen</p>
-        <button class="category-btn" onclick="fillNiche('tech developer coding programmer')">⚡ Generate Tech Names</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- SEO Content: How to Set a WhatsApp Username -->
-  <section class="seo-section guide-section" aria-label="How to set a WhatsApp username">
-    <h2>How to Set a WhatsApp Username — Step-by-Step Guide (2026)</h2>
-    <p class="section-intro">WhatsApp usernames let people message you <strong>without knowing your phone number</strong>. Here's how to set yours up:</p>
-
-    <div class="guide-steps">
-      <div class="guide-step">
-        <div class="guide-step-num">1</div>
-        <div class="guide-step-content">
-          <h3>Open WhatsApp Settings</h3>
-          <p>On <strong>Android</strong>: Tap the three dots (⋮) → Settings. On <strong>iPhone</strong>: Tap Settings at the bottom right.</p>
+    <!-- Hero / Header -->
+    <header class="header" id="generator-section">
+      <div class="logo">
+        <div class="logo-box">
+          <svg class="logo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
         </div>
       </div>
-      <div class="guide-step">
-        <div class="guide-step-num">2</div>
-        <div class="guide-step-content">
-          <h3>Go to Account → Username</h3>
-          <p>Navigate to <strong>Account</strong>, then tap <strong>Username</strong>. If you don't see this option, make sure your WhatsApp is updated to the latest version.</p>
-        </div>
-      </div>
-      <div class="guide-step">
-        <div class="guide-step-num">3</div>
-        <div class="guide-step-content">
-          <h3>Enter Your Desired Username</h3>
-          <p>Type your chosen username. WhatsApp will show a <span style="color:#25d366">green checkmark ✓</span> if it's available, or a <span style="color:#ff4d6a">red message</span> if it's taken or invalid.</p>
-        </div>
-      </div>
-      <div class="guide-step">
-        <div class="guide-step-num">4</div>
-        <div class="guide-step-content">
-          <h3>Save & Share</h3>
-          <p>Tap <strong>Save</strong>. Your username is now live! Share your link: <code>wa.me/yourusername</code> — anyone can message you without your phone number.</p>
-        </div>
-      </div>
-    </div>
+      <h1>WhatsApp <span class="text-highlight">Username</span> Checker</h1>
+      <p class="sub-one">Username is a <span class="highlight-green">limited time</span> feature, <span class="highlight-green">reserve</span> before they're gone!!</p>
+      <p class="sub-two">Get AI-powered suggestions — <span class="highlight-green">free, instant, no signup</span></p>
+    </header>
 
-    <div class="guide-callout">
-      <span class="callout-icon">💡</span>
+    <!-- Tool Section -->
+    <section class="search-card" aria-label="Username checker tool">
+      <div class="input-row">
+        <div class="input-group">
+          <label for="username-input">USERNAME (OPTIONAL)</label>
+          <span class="input-icon">@</span>
+          <input type="text" id="username-input" placeholder="@e.g. cooltrader" autocomplete="off" spellcheck="false" autofocus>
+        </div>
+        <div class="input-group">
+          <label for="niche-input">NICHE (OPTIONAL)</label>
+          <span class="input-icon">
+            <svg class="niche-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+              <line x1="7" y1="7" x2="7.01" y2="7"></line>
+            </svg>
+          </span>
+          <input type="text" id="niche-input" placeholder="e.g. trading, crypto, fitness" autocomplete="off">
+        </div>
+      </div>
+
+      <div class="options-row">
+        <div class="limit-wrapper">
+          <label>LIMIT</label>
+          <div class="stepper">
+            <button type="button" class="stepper-btn minus" onclick="stepLimit(-1)">-</button>
+            <input type="number" id="limit-input" value="10" min="1" max="25" step="1" readonly>
+            <button type="button" class="stepper-btn plus" onclick="stepLimit(1)">+</button>
+          </div>
+        </div>
+        <button type="button" class="prompt-toggle-btn" id="prompt-toggle" onclick="togglePrompt()">
+          <svg class="prompt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 20h9"></path>
+            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+          </svg>
+          <span>Custom prompt</span>
+          <span class="arrow">▶</span>
+        </button>
+      </div>
+
+      <div class="prompt-box" id="prompt-box">
+        <textarea id="prompt-input"
+          placeholder="e.g. I want short gaming usernames with numbers, football related, dark aesthetic..."
+          rows="2"></textarea>
+      </div>
+
+      <button class="btn" id="check-btn" onclick="doCheck()">
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+        </svg>
+        <span class="btn-text">Generate Suggestions</span>
+      </button>
+      <p class="hint">Enter a username, niche, or custom prompt — at least one required. AI generates creative usernames
+        validated against WhatsApp's format rules.</p>
+    </section>
+
+    <!-- Results (JS-rendered) -->
+    <div id="result-area"></div>
+
+    <!-- Inline disclaimer after results -->
+    <div class="inline-disclaimer">
+      <svg class="disclaimer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+        <line x1="12" y1="9" x2="12" y2="13"></line>
+        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+      </svg>
       <div>
-        <strong>Pro tip:</strong> Use our tool above to find and validate the perfect username <em>before</em> opening WhatsApp. This saves time since you'll already know it passes the format rules.
+        <strong>DISCLAIMER:</strong> This is an AI-powered username <em>idea generator</em> — not an official
+        WhatsApp service. Suggested usernames may already be taken. Always verify availability in the <span class="green-highlight-text">WhatsApp
+          app</span> (Settings &rarr; Account &rarr; Username). Not affiliated with WhatsApp or Meta.
       </div>
     </div>
-  </section>
 
-  <!-- SEO Content: Username Rules -->
-  <section class="seo-section" aria-label="WhatsApp username rules">
-    <h2>WhatsApp Username Rules (2026)</h2>
-    <div class="rules-grid">
-      <div class="rule-card">
-        <span class="rule-icon">📏</span>
-        <strong>5–30 characters</strong>
-        <p>Minimum 5, maximum 30 characters long</p>
+    <!-- SEO Content: How It Works -->
+    <section class="seo-section" aria-label="How it works">
+      <h2>How to Find Your <span class="text-highlight">Perfect</span> Username</h2>
+      <div class="seo-steps">
+        <div class="seo-step">
+          <div class="step-num">1</div>
+          <h3>Enter a Username or Niche</h3>
+          <p>Type your desired WhatsApp username, a niche keyword (like "gaming" or "fitness"), or both. You can also
+            use a custom prompt to describe exactly what you want.</p>
+        </div>
+        <div class="seo-step">
+          <div class="step-num">2</div>
+          <h3>AI Generates Alternatives</h3>
+          <p>Our AI (powered by Groq's llama-3.3-70b model) generates creative username ideas, then validates
+            <strong>every single one</strong> against WhatsApp's format rules.</p>
+        </div>
+        <div class="seo-step">
+          <div class="step-num">3</div>
+          <h3>Copy & Claim Your Username</h3>
+          <p>Click any suggestion to copy it. Then <strong>verify availability in the WhatsApp app</strong> (Settings →
+            Account → Username) — our tool checks format rules, but only WhatsApp can confirm if a name is truly
+            available.</p>
+        </div>
       </div>
-      <div class="rule-card">
-        <span class="rule-icon">🔤</span>
-        <strong>Starts with a letter</strong>
-        <p>Must begin with a lowercase letter (a-z)</p>
-      </div>
-      <div class="rule-card">
-        <span class="rule-icon">🔣</span>
-        <strong>a-z, 0-9, . and _ only</strong>
-        <p>Lowercase letters, numbers, periods, underscores</p>
-      </div>
-      <div class="rule-card">
-        <span class="rule-icon">🚫</span>
-        <strong>No consecutive . or _</strong>
-        <p>Periods and underscores cannot appear back-to-back</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- SEO Content: Tips -->
-  <section class="seo-section tips-section" aria-label="Tips for choosing a WhatsApp username">
-    <h2>Tips for Choosing the Perfect WhatsApp Username</h2>
-    <div class="tips-grid">
-      <div class="tip-card">
-        <span class="tip-num">01</span>
-        <h3>Keep It Short & Memorable</h3>
-        <p>Shorter usernames (5-10 chars) are easier to remember and share. Think <code>dev.max</code> vs <code>developer_maximum_2026</code>. The shorter one wins every time.</p>
-      </div>
-      <div class="tip-card">
-        <span class="tip-num">02</span>
-        <h3>Match Your Personal Brand</h3>
-        <p>If you use <code>@cooltrader</code> on Instagram, try the same on WhatsApp. Consistent usernames across platforms make you easier to find and build trust.</p>
-      </div>
-      <div class="tip-card">
-        <span class="tip-num">03</span>
-        <h3>Use Dots Instead of Underscores</h3>
-        <p>Dots (<code>cool.trader</code>) look cleaner and more modern than underscores (<code>cool_trader</code>). They also feel more premium — like an email address or domain name.</p>
-      </div>
-      <div class="tip-card">
-        <span class="tip-num">04</span>
-        <h3>Avoid Random Numbers</h3>
-        <p>Usernames like <code>john12345</code> feel impersonal. If you must use numbers, make them meaningful — your birth year, a lucky number, or something brand-related.</p>
-      </div>
-      <div class="tip-card">
-        <span class="tip-num">05</span>
-        <h3>Think About Searchability</h3>
-        <p>Include your name, profession, or niche. Someone looking for a fitness coach is more likely to remember <code>fit.coach.sam</code> than a random abstract handle.</p>
-      </div>
-      <div class="tip-card">
-        <span class="tip-num">06</span>
-        <h3>Test Before You Commit</h3>
-        <p>Use our free tool to generate 10-25 options, then say each one out loud. If it sounds good spoken, it'll work great as a username. The best usernames are easy to say.</p>
-      </div>
-    </div>
-  </section>
+    <!-- SEO Content: Why Reserve Now (Urgency + Keywords) -->
+    <section class="seo-section urgency-section" aria-label="Why reserve your WhatsApp username now">
+      <h2>🔥 Why You Should Reserve Your WhatsApp Username Now</h2>
+      <p class="section-intro">WhatsApp usernames are a <strong>new feature in 2026</strong>, and the land grab is
+        happening right now. Here's why you shouldn't wait:</p>
 
-  <!-- SEO Content: FAQ -->
-  <section class="seo-section" aria-label="Frequently asked questions">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-list">
-      <details class="faq-item">
-        <summary>How do I check if a WhatsApp username is available?</summary>
-        <p>Enter your desired username in the checker tool above. It validates the username against WhatsApp's format rules instantly. For the most reliable availability check, also verify directly in the WhatsApp app under Settings → Account → Username.</p>
-      </details>
-      <details class="faq-item">
-        <summary>What are WhatsApp username rules?</summary>
-        <p>WhatsApp usernames must be 5–30 characters long, start with a letter, and can only contain lowercase letters (a-z), numbers (0-9), periods (.), and underscores (_). Consecutive periods or underscores are not allowed.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Can I get AI-generated WhatsApp username suggestions?</summary>
-        <p>Yes! Our tool uses Groq's llama-3.3-70b AI model to generate creative username alternatives based on your input. You can provide a username, a niche (like gaming, crypto, fitness), or even a custom prompt describing what kind of handle you want.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Is this WhatsApp username checker free?</summary>
-        <p>Yes, completely free. No signup, no login, no limits. Just enter a username or niche and get instant results with AI-powered suggestions.</p>
-      </details>
-      <details class="faq-item">
-        <summary>How accurate is the availability check?</summary>
-        <p>Our tool validates usernames against WhatsApp's official format rules with 100% accuracy. However, WhatsApp does not provide a public API for checking if a specific username is already claimed. We recommend confirming availability directly in the WhatsApp app.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Can someone find me by my WhatsApp username?</summary>
-        <p>Yes! Once you set a WhatsApp username, people can find and message you using <code>wa.me/yourusername</code> without needing your phone number. This is one of the key benefits — it lets you share your WhatsApp contact without revealing your personal number.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Can I change my WhatsApp username later?</summary>
-        <p>Yes, you can change your WhatsApp username at any time through Settings → Account → Username. However, once you release a username, someone else could claim it — so choose carefully or use our tool to find the perfect one first.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Are WhatsApp usernames case-sensitive?</summary>
-        <p>No, WhatsApp usernames are not case-sensitive. They are always stored and displayed in lowercase. Whether someone types @CoolTrader or @cooltrader, it leads to the same account.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Is WhatsApp username the same as display name?</summary>
-        <p>No, they are different. Your <strong>display name</strong> is what contacts see in chats (can contain any characters, spaces, emojis). Your <strong>username</strong> is a unique handle (like @cooltrader) that others use to find you without your phone number. You set both independently.</p>
-      </details>
-      <details class="faq-item">
-        <summary>How to get a short WhatsApp username?</summary>
-        <p>Short usernames (5-8 characters) are highly sought after. Tips: combine initials with a suffix (e.g., <code>aj.dev</code>), use abbreviations (e.g., <code>nft.og</code>), or try niche-specific short words. Use our AI generator with a custom prompt like "short 5-6 character usernames" to get creative short options.</p>
-      </details>
-      <details class="faq-item">
-        <summary>What happens if I delete my WhatsApp username?</summary>
-        <p>When you delete your WhatsApp username, the wa.me link stops working and people can no longer find you by that handle. The username becomes available for others to claim. You can always set a new username later through Settings.</p>
-      </details>
-      <details class="faq-item">
-        <summary>How many suggestions can I get?</summary>
-        <p>You can set the limit from 1 to 25 suggestions per search. The AI generates extra options internally, validates all against WhatsApp's format rules, and returns only the valid ones (up to your limit). You can run as many searches as you want — it's unlimited.</p>
-      </details>
-    </div>
-  </section>
-
-  <!-- Legal Disclaimer Section -->
-  <section class="seo-section disclaimer-section" aria-label="Legal disclaimer">
-    <h2>⚠️ Disclaimer & Legal Notice</h2>
-    <div class="disclaimer-content">
-      <div class="disclaimer-block">
-        <h3>🤖 AI-Generated Suggestions — Not Guaranteed</h3>
-        <p>This is a <strong>fun, experimental tool</strong> that uses artificial intelligence (Groq's llama-3.3-70b model) to <strong>generate possible WhatsApp username ideas</strong>. The suggestions are AI-generated creative ideas that comply with WhatsApp's known username format rules (5–30 chars, starts with a letter, etc.).</p>
-        <p><strong>Important:</strong> Usernames shown here are <strong>not guaranteed to be available</strong> on WhatsApp. A username that appears valid in our tool may already be claimed by another user, reserved by WhatsApp, or become unavailable at any time. <strong>Always verify availability directly in the WhatsApp app</strong> (Settings → Account → Username) before relying on any result.</p>
+      <div class="urgency-grid">
+        <div class="urgency-card">
+          <span class="urgency-card-icon">⚡</span>
+          <h3>First Come, First Served</h3>
+          <p>WhatsApp usernames work like social media handles — once <code>@coolname</code> is taken, <strong>it's gone
+              forever</strong>. There are no disputes, no buybacks. The first person to claim it owns it.</p>
+        </div>
+        <div class="urgency-card">
+          <span class="urgency-card-icon">📊</span>
+          <h3>3 Billion Users, Limited Usernames</h3>
+          <p>WhatsApp has over <strong>3 billion active users</strong> worldwide. That's 3 billion people competing for
+            short, memorable usernames. Simple names like <code>@alex</code>, <code>@trader</code>, <code>@dev</code>
+            are already gone.</p>
+        </div>
+        <div class="urgency-card">
+          <span class="urgency-card-icon">🔒</span>
+          <h3>Protect Your Brand & Identity</h3>
+          <p>If you're a creator, business, or public figure — <strong>someone else could claim your name</strong>.
+            Secure your brand's WhatsApp username before an impersonator or squatter does.</p>
+        </div>
+        <div class="urgency-card">
+          <span class="urgency-card-icon">🌍</span>
+          <h3>Privacy Without Compromise</h3>
+          <p>With a username, people can message you via <code>wa.me/yourusername</code> — <strong>no phone number
+              needed</strong>. Share your WhatsApp publicly without exposing your personal number. This is the future of
+            WhatsApp contact sharing.</p>
+        </div>
       </div>
 
-      <div class="disclaimer-block">
-        <h3>🚫 No Affiliation with WhatsApp or Meta</h3>
-        <p>This tool is an <strong>independent, third-party project</strong>. It is <strong>not affiliated with, endorsed by, sponsored by, or in any way officially connected</strong> with WhatsApp LLC, Meta Platforms, Inc., or any of their subsidiaries or affiliates.</p>
-        <p>The names "WhatsApp" and "Meta" are <strong>registered trademarks</strong> of their respective owners. Any use of these names on this site is purely for <strong>descriptive and informational purposes</strong> — to identify the platform for which usernames are being generated. We do not claim ownership of these trademarks.</p>
+      <div class="urgency-cta">
+        <p>👆 <strong>Don't wait</strong> — scroll up, generate your perfect username, and claim it in WhatsApp right
+          now.</p>
+      </div>
+    </section>
+
+    <!-- SEO Content: Username Ideas by Category (Interactive) -->
+    <section class="seo-section category-section" aria-label="WhatsApp username ideas by category" id="browse-section">
+      <h2>Best WhatsApp Username Ideas by Category <span class="text-highlight">(2026)</span></h2>
+      <p class="section-intro">Looking for the perfect WhatsApp username? Browse our curated categories below and click
+        <strong>"Generate More"</strong> to get AI-powered suggestions in any niche.</p>
+
+      <div class="category-grid">
+        <!-- Card 1: Gaming -->
+        <div class="category-card">
+          <div class="category-header">
+            <div class="category-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="6" y1="12" x2="10" y2="12"></line>
+                <line x1="8" y1="10" x2="8" y2="14"></line>
+                <line x1="15" y1="13" x2="15.01" y2="13"></line>
+                <line x1="18" y1="11" x2="18.01" y2="11"></line>
+                <rect x="2" y="6" width="20" height="12" rx="3"></rect>
+              </svg>
+            </div>
+            <h3>Gaming</h3>
+          </div>
+          <div class="category-examples">
+            <div>shadow.striker · pixel.ninja · neon.blitz</div>
+          </div>
+          <button class="category-btn" onclick="fillNiche('gaming')">
+            <svg class="btn-spark-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+            Generate Gaming Names
+          </button>
+        </div>
+
+        <!-- Card 2: Business -->
+        <div class="category-card">
+          <div class="category-header">
+            <div class="category-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+              </svg>
+            </div>
+            <h3>Business & Pro</h3>
+          </div>
+          <div class="category-examples">
+            <div>brand.studio · grow.digital · market.pulse</div>
+          </div>
+          <button class="category-btn" onclick="fillNiche('business professional')">
+            <svg class="btn-spark-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+            Generate Business Names
+          </button>
+        </div>
+
+        <!-- Card 3: Crypto -->
+        <div class="category-card">
+          <div class="category-header">
+            <div class="category-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                <polyline points="17 6 23 6 23 12"></polyline>
+              </svg>
+            </div>
+            <h3>Crypto & Trading</h3>
+          </div>
+          <div class="category-examples">
+            <div>defi.whale · chart.ninja · bull.signal</div>
+          </div>
+          <button class="category-btn" onclick="fillNiche('crypto trading finance')">
+            <svg class="btn-spark-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+            Generate Crypto Names
+          </button>
+        </div>
+
+        <!-- Card 4: Aesthetic -->
+        <div class="category-card">
+          <div class="category-header">
+            <div class="category-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 14.7255 3.09032 17.1962 4.85857 19C5.03347 19.1749 5.0999 19.4283 5.02403 19.6646C4.8528 20.1983 4.75704 20.7616 4.75704 21.3432C4.75704 21.706 5.05108 22 5.41382 22H12Z"></path>
+                <circle cx="7.5" cy="10.5" r="1.5"></circle>
+                <circle cx="11.5" cy="7.5" r="1.5"></circle>
+                <circle cx="16.5" cy="9.5" r="1.5"></circle>
+                <circle cx="15.5" cy="14.5" r="1.5"></circle>
+              </svg>
+            </div>
+            <h3>Aesthetic & Creative</h3>
+          </div>
+          <div class="category-examples">
+            <div>soft.aura · velvet.haze · lunar.mist</div>
+          </div>
+          <button class="category-btn" onclick="fillNiche('aesthetic creative artistic')">
+            <svg class="btn-spark-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+            Generate Aesthetic Names
+          </button>
+        </div>
+
+        <!-- Card 5: Fitness -->
+        <div class="category-card">
+          <div class="category-header">
+            <div class="category-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+              </svg>
+            </div>
+            <h3>Fitness & Health</h3>
+          </div>
+          <div class="category-examples">
+            <div>iron.grind · flex.zone · lift.beast</div>
+          </div>
+          <button class="category-btn" onclick="fillNiche('fitness gym health')">
+            <svg class="btn-spark-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+            Generate Fitness Names
+          </button>
+        </div>
+
+        <!-- Card 6: Funny -->
+        <div class="category-card">
+          <div class="category-header">
+            <div class="category-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                <line x1="15" y1="9" x2="15.01" y2="9"></line>
+              </svg>
+            </div>
+            <h3>Funny & Casual</h3>
+          </div>
+          <div class="category-examples">
+            <div>snack.lord · lazy.panda · meme.monk</div>
+          </div>
+          <button class="category-btn" onclick="fillNiche('funny meme casual humorous')">
+            <svg class="btn-spark-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+            Generate Funny Names
+          </button>
+        </div>
+
+        <!-- Card 7: Music -->
+        <div class="category-card">
+          <div class="category-header">
+            <div class="category-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 18V5l12-2v13"></path>
+                <circle cx="6" cy="18" r="3"></circle>
+                <circle cx="18" cy="16" r="3"></circle>
+              </svg>
+            </div>
+            <h3>Music & Entertainment</h3>
+          </div>
+          <div class="category-examples">
+            <div>bass.drop · vinyl.soul · beat.forge</div>
+          </div>
+          <button class="category-btn" onclick="fillNiche('music entertainment')">
+            <svg class="btn-spark-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+            Generate Music Names
+          </button>
+        </div>
+
+        <!-- Card 8: Tech -->
+        <div class="category-card">
+          <div class="category-header">
+            <div class="category-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </div>
+            <h3>Tech & Developer</h3>
+          </div>
+          <div class="category-examples">
+            <div>code.ninja · dev.pulse · byte.craft</div>
+          </div>
+          <button class="category-btn" onclick="fillNiche('tech developer coding programmer')">
+            <svg class="btn-spark-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+            Generate Tech Names
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEO Content: How to Set a WhatsApp Username -->
+    <section class="seo-section guide-section" aria-label="How to set a WhatsApp username">
+      <h2>How to Set a WhatsApp Username — Step-by-Step Guide (2026)</h2>
+      <p class="section-intro">WhatsApp usernames let people message you <strong>without knowing your phone
+          number</strong>. Here's how to set yours up:</p>
+
+      <div class="guide-steps">
+        <div class="guide-step">
+          <div class="guide-step-num">1</div>
+          <div class="guide-step-content">
+            <h3>Open WhatsApp Settings</h3>
+            <p>On <strong>Android</strong>: Tap the three dots (⋮) → Settings. On <strong>iPhone</strong>: Tap Settings
+              at the bottom right.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <div class="guide-step-num">2</div>
+          <div class="guide-step-content">
+            <h3>Go to Account → Username</h3>
+            <p>Navigate to <strong>Account</strong>, then tap <strong>Username</strong>. If you don't see this option,
+              make sure your WhatsApp is updated to the latest version.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <div class="guide-step-num">3</div>
+          <div class="guide-step-content">
+            <h3>Enter Your Desired Username</h3>
+            <p>Type your chosen username. WhatsApp will show a <span style="color:#25d366">green checkmark ✓</span> if
+              it's available, or a <span style="color:#ff4d6a">red message</span> if it's taken or invalid.</p>
+          </div>
+        </div>
+        <div class="guide-step">
+          <div class="guide-step-num">4</div>
+          <div class="guide-step-content">
+            <h3>Save & Share</h3>
+            <p>Tap <strong>Save</strong>. Your username is now live! Share your link: <code>wa.me/yourusername</code> —
+              anyone can message you without your phone number.</p>
+          </div>
+        </div>
       </div>
 
-      <div class="disclaimer-block">
-        <h3>🔒 No Data Collection & Privacy</h3>
-        <p>We do <strong>not store, log, or sell</strong> any usernames you search for or generate. Your inputs are sent to an AI model for suggestion generation and are <strong>not retained</strong> after the request completes. No personal information is collected, no cookies are used for tracking, and no account registration is required.</p>
+      <div class="guide-callout">
+        <span class="callout-icon">💡</span>
+        <div>
+          <strong>Pro tip:</strong> Use our tool above to find and validate the perfect username <em>before</em> opening
+          WhatsApp. This saves time since you'll already know it passes the format rules.
+        </div>
       </div>
+    </section>
 
-      <div class="disclaimer-block">
-        <h3>📋 Fair Use & No Warranty</h3>
-        <p>This tool is provided <strong>"as is" without warranty of any kind</strong>, express or implied. The creators are not responsible for any consequences arising from the use of generated usernames, including but not limited to: usernames being unavailable, trademark conflicts with third parties, or any other disputes.</p>
-        <p>This project constitutes <strong>fair use</strong> of publicly known information about WhatsApp's username feature. It does not access, scrape, reverse-engineer, or interact with any WhatsApp or Meta APIs, servers, or proprietary systems. All suggestions are generated independently by a general-purpose AI language model.</p>
+    <!-- SEO Content: Username Rules -->
+    <section class="seo-section" aria-label="WhatsApp username rules">
+      <h2>WhatsApp Username Rules (2026)</h2>
+      <div class="rules-grid">
+        <div class="rule-card">
+          <span class="rule-icon">📏</span>
+          <strong>5–30 characters</strong>
+          <p>Minimum 5, maximum 30 characters long</p>
+        </div>
+        <div class="rule-card">
+          <span class="rule-icon">🔤</span>
+          <strong>Starts with a letter</strong>
+          <p>Must begin with a lowercase letter (a-z)</p>
+        </div>
+        <div class="rule-card">
+          <span class="rule-icon">🔣</span>
+          <strong>a-z, 0-9, . and _ only</strong>
+          <p>Lowercase letters, numbers, periods, underscores</p>
+        </div>
+        <div class="rule-card">
+          <span class="rule-icon">🚫</span>
+          <strong>No consecutive . or _</strong>
+          <p>Periods and underscores cannot appear back-to-back</p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <footer class="footer">
-    <p>Powered by <span>Groq</span> · llama-3.3-70b-versatile</p>
-    <p class="footer-disclaimer">This is an independent fan-made tool for generating WhatsApp username ideas using AI. Not affiliated with, endorsed by, or connected to WhatsApp LLC or Meta Platforms, Inc. "WhatsApp" is a registered trademark of WhatsApp LLC. All trademarks belong to their respective owners.</p>
-    <p style="margin-top:8px; font-size:11px;">© 2026 PickMyWA. All rights reserved.</p>
-  </footer>
-</main>
+    <!-- SEO Content: Tips -->
+    <section class="seo-section tips-section" aria-label="Tips for choosing a WhatsApp username">
+      <h2>Tips for Choosing the Perfect WhatsApp Username</h2>
+      <div class="tips-grid">
+        <div class="tip-card">
+          <span class="tip-num">01</span>
+          <h3>Keep It Short & Memorable</h3>
+          <p>Shorter usernames (5-10 chars) are easier to remember and share. Think <code>dev.max</code> vs
+            <code>developer_maximum_2026</code>. The shorter one wins every time.</p>
+        </div>
+        <div class="tip-card">
+          <span class="tip-num">02</span>
+          <h3>Match Your Personal Brand</h3>
+          <p>If you use <code>@cooltrader</code> on Instagram, try the same on WhatsApp. Consistent usernames across
+            platforms make you easier to find and build trust.</p>
+        </div>
+        <div class="tip-card">
+          <span class="tip-num">03</span>
+          <h3>Use Dots Instead of Underscores</h3>
+          <p>Dots (<code>cool.trader</code>) look cleaner and more modern than underscores (<code>cool_trader</code>).
+            They also feel more premium — like an email address or domain name.</p>
+        </div>
+        <div class="tip-card">
+          <span class="tip-num">04</span>
+          <h3>Avoid Random Numbers</h3>
+          <p>Usernames like <code>john12345</code> feel impersonal. If you must use numbers, make them meaningful — your
+            birth year, a lucky number, or something brand-related.</p>
+        </div>
+        <div class="tip-card">
+          <span class="tip-num">05</span>
+          <h3>Think About Searchability</h3>
+          <p>Include your name, profession, or niche. Someone looking for a fitness coach is more likely to remember
+            <code>fit.coach.sam</code> than a random abstract handle.</p>
+        </div>
+        <div class="tip-card">
+          <span class="tip-num">06</span>
+          <h3>Test Before You Commit</h3>
+          <p>Use our free tool to generate 10-25 options, then say each one out loud. If it sounds good spoken, it'll
+            work great as a username. The best usernames are easy to say.</p>
+        </div>
+      </div>
+    </section>
 
-<script src="/static/app.js"></script>
+    <!-- SEO Content: FAQ -->
+    <section class="seo-section" aria-label="Frequently asked questions">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>How do I check if a WhatsApp username is available?</summary>
+          <p>Enter your desired username in the checker tool above. It validates the username against WhatsApp's format
+            rules instantly. For the most reliable availability check, also verify directly in the WhatsApp app under
+            Settings → Account → Username.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What are WhatsApp username rules?</summary>
+          <p>WhatsApp usernames must be 5–30 characters long, start with a letter, and can only contain lowercase
+            letters (a-z), numbers (0-9), periods (.), and underscores (_). Consecutive periods or underscores are not
+            allowed.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can I get AI-generated WhatsApp username suggestions?</summary>
+          <p>Yes! Our tool uses Groq's llama-3.3-70b AI model to generate creative username alternatives based on your
+            input. You can provide a username, a niche (like gaming, crypto, fitness), or even a custom prompt
+            describing what kind of handle you want.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is this WhatsApp username checker free?</summary>
+          <p>Yes, completely free. No signup, no login, no limits. Just enter a username or niche and get instant
+            results with AI-powered suggestions.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How accurate is the availability check?</summary>
+          <p>Our tool validates usernames against WhatsApp's official format rules with 100% accuracy. However, WhatsApp
+            does not provide a public API for checking if a specific username is already claimed. We recommend
+            confirming availability directly in the WhatsApp app.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can someone find me by my WhatsApp username?</summary>
+          <p>Yes! Once you set a WhatsApp username, people can find and message you using
+            <code>wa.me/yourusername</code> without needing your phone number. This is one of the key benefits — it lets
+            you share your WhatsApp contact without revealing your personal number.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can I change my WhatsApp username later?</summary>
+          <p>Yes, you can change your WhatsApp username at any time through Settings → Account → Username. However, once
+            you release a username, someone else could claim it — so choose carefully or use our tool to find the
+            perfect one first.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Are WhatsApp usernames case-sensitive?</summary>
+          <p>No, WhatsApp usernames are not case-sensitive. They are always stored and displayed in lowercase. Whether
+            someone types @CoolTrader or @cooltrader, it leads to the same account.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Is WhatsApp username the same as display name?</summary>
+          <p>No, they are different. Your <strong>display name</strong> is what contacts see in chats (can contain any
+            characters, spaces, emojis). Your <strong>username</strong> is a unique handle (like @cooltrader) that
+            others use to find you without your phone number. You set both independently.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How to get a short WhatsApp username?</summary>
+          <p>Short usernames (5-8 characters) are highly sought after. Tips: combine initials with a suffix (e.g.,
+            <code>aj.dev</code>), use abbreviations (e.g., <code>nft.og</code>), or try niche-specific short words. Use
+            our AI generator with a custom prompt like "short 5-6 character usernames" to get creative short options.
+          </p>
+        </details>
+        <details class="faq-item">
+          <summary>What happens if I delete my WhatsApp username?</summary>
+          <p>When you delete your WhatsApp username, the wa.me link stops working and people can no longer find you by
+            that handle. The username becomes available for others to claim. You can always set a new username later
+            through Settings.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How many suggestions can I get?</summary>
+          <p>You can set the limit from 1 to 25 suggestions per search. The AI generates extra options internally,
+            validates all against WhatsApp's format rules, and returns only the valid ones (up to your limit). You can
+            run as many searches as you want — it's unlimited.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- Legal Disclaimer Section -->
+    <section class="seo-section disclaimer-section" aria-label="Legal disclaimer">
+      <h2>⚠️ Disclaimer & Legal Notice</h2>
+      <div class="disclaimer-content">
+        <div class="disclaimer-block">
+          <h3>🤖 AI-Generated Suggestions — Not Guaranteed</h3>
+          <p>This is a <strong>fun, experimental tool</strong> that uses artificial intelligence (Groq's llama-3.3-70b
+            model) to <strong>generate possible WhatsApp username ideas</strong>. The suggestions are AI-generated
+            creative ideas that comply with WhatsApp's known username format rules (5–30 chars, starts with a letter,
+            etc.).</p>
+          <p><strong>Important:</strong> Usernames shown here are <strong>not guaranteed to be available</strong> on
+            WhatsApp. A username that appears valid in our tool may already be claimed by another user, reserved by
+            WhatsApp, or become unavailable at any time. <strong>Always verify availability directly in the WhatsApp
+              app</strong> (Settings → Account → Username) before relying on any result.</p>
+        </div>
+
+        <div class="disclaimer-block">
+          <h3>🚫 No Affiliation with WhatsApp or Meta</h3>
+          <p>This tool is an <strong>independent, third-party project</strong>. It is <strong>not affiliated with,
+              endorsed by, sponsored by, or in any way officially connected</strong> with WhatsApp LLC, Meta Platforms,
+            Inc., or any of their subsidiaries or affiliates.</p>
+          <p>The names "WhatsApp" and "Meta" are <strong>registered trademarks</strong> of their respective owners. Any
+            use of these names on this site is purely for <strong>descriptive and informational purposes</strong> — to
+            identify the platform for which usernames are being generated. We do not claim ownership of these
+            trademarks.</p>
+        </div>
+
+        <div class="disclaimer-block">
+          <h3>🔒 No Data Collection & Privacy</h3>
+          <p>We do <strong>not store, log, or sell</strong> any usernames you search for or generate. Your inputs are
+            sent to an AI model for suggestion generation and are <strong>not retained</strong> after the request
+            completes. No personal information is collected, no cookies are used for tracking, and no account
+            registration is required.</p>
+        </div>
+
+        <div class="disclaimer-block">
+          <h3>📋 Fair Use & No Warranty</h3>
+          <p>This tool is provided <strong>"as is" without warranty of any kind</strong>, express or implied. The
+            creators are not responsible for any consequences arising from the use of generated usernames, including but
+            not limited to: usernames being unavailable, trademark conflicts with third parties, or any other disputes.
+          </p>
+          <p>This project constitutes <strong>fair use</strong> of publicly known information about WhatsApp's username
+            feature. It does not access, scrape, reverse-engineer, or interact with any WhatsApp or Meta APIs, servers,
+            or proprietary systems. All suggestions are generated independently by a general-purpose AI language model.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>Powered by <span>Groq</span> · llama-3.3-70b-versatile</p>
+      <p class="footer-disclaimer">This is an independent fan-made tool for generating WhatsApp username ideas using AI.
+        Not affiliated with, endorsed by, or connected to WhatsApp LLC or Meta Platforms, Inc. "WhatsApp" is a
+        registered trademark of WhatsApp LLC. All trademarks belong to their respective owners.</p>
+      <p style="margin-top:8px; font-size:11px;">© 2026 PickMyWA. All rights reserved.</p>
+    </footer>
+  </main>
+
+  <!-- Fixed Bottom Navigation Bar -->
+  <nav class="bottom-nav">
+    <button class="nav-item active" id="nav-generator" onclick="scrollToSection('generator-section')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+      </svg>
+      <span>Generator</span>
+    </button>
+    <button class="nav-item" id="nav-browse" onclick="scrollToSection('browse-section')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="3" width="7" height="7"></rect>
+        <rect x="14" y="3" width="7" height="7"></rect>
+        <rect x="14" y="14" width="7" height="7"></rect>
+        <rect x="3" y="14" width="7" height="7"></rect>
+      </svg>
+      <span>Browse</span>
+    </button>
+    <button class="nav-item" id="nav-results" onclick="scrollToSection('result-area')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+      </svg>
+      <span>AI Results</span>
+    </button>
+  </nav>
+
+  <script src="/static/app.js"></script>
 </body>
+
 </html>
