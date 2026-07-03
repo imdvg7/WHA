@@ -70,8 +70,8 @@
   {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "name": "How to Check WhatsApp Username Availability",
-    "description": "Use our free AI-powered tool to check if a WhatsApp username is available and get creative alternatives.",
+    "name": "How to Find Your Perfect WhatsApp Username",
+    "description": "Use our free AI-powered tool to generate creative WhatsApp username ideas that comply with WhatsApp's format rules. Always verify actual availability in the WhatsApp app.",
     "totalTime": "PT30S",
     "step": [
       {
@@ -90,7 +90,7 @@
         "@type": "HowToStep",
         "position": 3,
         "name": "Copy Your Favorite",
-        "text": "Browse the validated suggestions and click any username to copy it. Then open WhatsApp > Settings > Account > Username to claim it."
+        "text": "Browse the AI-generated suggestions and click any username to copy it. Then verify availability directly in the WhatsApp app (Settings > Account > Username) — only WhatsApp can confirm if a name is truly available."
       }
     ]
   }
@@ -260,9 +260,14 @@
   <!-- Results (JS-rendered) -->
   <div id="result-area"></div>
 
+  <!-- Inline disclaimer after results -->
+  <div class="inline-disclaimer">
+    <p>⚠️ <strong>Disclaimer:</strong> This is an AI-powered username <em>idea generator</em> — not an official WhatsApp service. Suggested usernames may already be taken. Always verify availability in the <strong>WhatsApp app</strong> (Settings → Account → Username). Not affiliated with WhatsApp or Meta.</p>
+  </div>
+
   <!-- SEO Content: How It Works -->
   <section class="seo-section" aria-label="How it works">
-    <h2>How to Check WhatsApp Username Availability</h2>
+    <h2>How to Find Your Perfect WhatsApp Username</h2>
     <div class="seo-steps">
       <div class="seo-step">
         <div class="step-num">1</div>
@@ -277,7 +282,7 @@
       <div class="seo-step">
         <div class="step-num">3</div>
         <h3>Copy & Claim Your Username</h3>
-        <p>Click any suggestion to copy it instantly. Then open <strong>WhatsApp → Settings → Account → Username</strong> to claim your new handle.</p>
+        <p>Click any suggestion to copy it. Then <strong>verify availability in the WhatsApp app</strong> (Settings → Account → Username) — our tool checks format rules, but only WhatsApp can confirm if a name is truly available.</p>
       </div>
     </div>
   </section>
@@ -502,9 +507,39 @@
     </div>
   </section>
 
+  <!-- Legal Disclaimer Section -->
+  <section class="seo-section disclaimer-section" aria-label="Legal disclaimer">
+    <h2>⚠️ Disclaimer & Legal Notice</h2>
+    <div class="disclaimer-content">
+      <div class="disclaimer-block">
+        <h3>🤖 AI-Generated Suggestions — Not Guaranteed</h3>
+        <p>This is a <strong>fun, experimental tool</strong> that uses artificial intelligence (Groq's llama-3.3-70b model) to <strong>generate possible WhatsApp username ideas</strong>. The suggestions are AI-generated creative ideas that comply with WhatsApp's known username format rules (5–30 chars, starts with a letter, etc.).</p>
+        <p><strong>Important:</strong> Usernames shown here are <strong>not guaranteed to be available</strong> on WhatsApp. A username that appears valid in our tool may already be claimed by another user, reserved by WhatsApp, or become unavailable at any time. <strong>Always verify availability directly in the WhatsApp app</strong> (Settings → Account → Username) before relying on any result.</p>
+      </div>
+
+      <div class="disclaimer-block">
+        <h3>🚫 No Affiliation with WhatsApp or Meta</h3>
+        <p>This tool is an <strong>independent, third-party project</strong>. It is <strong>not affiliated with, endorsed by, sponsored by, or in any way officially connected</strong> with WhatsApp LLC, Meta Platforms, Inc., or any of their subsidiaries or affiliates.</p>
+        <p>The names "WhatsApp" and "Meta" are <strong>registered trademarks</strong> of their respective owners. Any use of these names on this site is purely for <strong>descriptive and informational purposes</strong> — to identify the platform for which usernames are being generated. We do not claim ownership of these trademarks.</p>
+      </div>
+
+      <div class="disclaimer-block">
+        <h3>🔒 No Data Collection & Privacy</h3>
+        <p>We do <strong>not store, log, or sell</strong> any usernames you search for or generate. Your inputs are sent to an AI model for suggestion generation and are <strong>not retained</strong> after the request completes. No personal information is collected, no cookies are used for tracking, and no account registration is required.</p>
+      </div>
+
+      <div class="disclaimer-block">
+        <h3>📋 Fair Use & No Warranty</h3>
+        <p>This tool is provided <strong>"as is" without warranty of any kind</strong>, express or implied. The creators are not responsible for any consequences arising from the use of generated usernames, including but not limited to: usernames being unavailable, trademark conflicts with third parties, or any other disputes.</p>
+        <p>This project constitutes <strong>fair use</strong> of publicly known information about WhatsApp's username feature. It does not access, scrape, reverse-engineer, or interact with any WhatsApp or Meta APIs, servers, or proprietary systems. All suggestions are generated independently by a general-purpose AI language model.</p>
+      </div>
+    </div>
+  </section>
+
   <footer class="footer">
     <p>Powered by <span>Groq</span> · llama-3.3-70b-versatile</p>
-    <p style="margin-top:6px; font-size:11px;">© 2026 PickMyWA — WhatsApp Username Checker. Not affiliated with WhatsApp or Meta.</p>
+    <p class="footer-disclaimer">This is an independent fan-made tool for generating WhatsApp username ideas using AI. Not affiliated with, endorsed by, or connected to WhatsApp LLC or Meta Platforms, Inc. "WhatsApp" is a registered trademark of WhatsApp LLC. All trademarks belong to their respective owners.</p>
+    <p style="margin-top:8px; font-size:11px;">© 2026 PickMyWA. All rights reserved.</p>
   </footer>
 </main>
 

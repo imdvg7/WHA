@@ -598,6 +598,66 @@ body {
   border: 1px solid var(--border);
 }
 
+/* ── Inline Disclaimer (below tool) ── */
+.inline-disclaimer {
+  margin-top: 20px;
+  padding: 14px 18px;
+  background: var(--warning-bg);
+  border: 1px solid var(--warning-border);
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+.inline-disclaimer strong { color: var(--warning); }
+.inline-disclaimer em { color: var(--text-primary); font-style: normal; font-weight: 600; }
+
+/* ── Legal Disclaimer Section ── */
+.disclaimer-section {
+  border-color: var(--warning-border);
+}
+.disclaimer-section h2 {
+  color: var(--warning);
+}
+.disclaimer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.disclaimer-block {
+  padding: 18px;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--warning);
+}
+.disclaimer-block h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+.disclaimer-block p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 8px;
+}
+.disclaimer-block p:last-child { margin-bottom: 0; }
+.disclaimer-block strong { color: var(--text-primary); }
+
+/* ── Footer disclaimer ── */
+.footer-disclaimer {
+  margin-top: 10px;
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.8;
+}
+
 /* ── Responsive ── */
 @media (max-width: 600px) {
   .container { padding: 24px 16px 40px; }

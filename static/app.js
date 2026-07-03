@@ -111,7 +111,7 @@ function renderSmartResult(data) {
   }
 
   // Disclaimer
-  html += '<div class="disclaimer">\ud83d\udcf1 WhatsApp has no public API for availability \u2014 verify each username in the WhatsApp app (Settings \u2192 Account \u2192 Username)</div>';
+  html += '<div class="disclaimer">\u26a0\ufe0f These are AI-generated username <strong>ideas</strong>, not confirmed availability. Usernames may already be taken. Always verify in the <strong>WhatsApp app</strong> (Settings \u2192 Account \u2192 Username). Not affiliated with WhatsApp or Meta.</div>';
 
   if (!data.suggestions?.length && !data.check_result) {
     html = '<div class="error-banner">No results. Try a different username, niche, or prompt.</div>';
