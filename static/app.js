@@ -133,3 +133,14 @@ function copyUsername(username, el) {
     }, 1500);
   });
 }
+
+function fillNiche(niche) {
+  nicheInput.value = niche;
+  usernameInput.value = '';
+  // Scroll to the tool section smoothly
+  document.querySelector('.search-card').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  // Brief delay so user sees the scroll, then trigger generation
+  setTimeout(function() {
+    doCheck();
+  }, 400);
+}

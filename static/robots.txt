@@ -8,5 +8,9 @@ Disallow: /check/
 Disallow: /suggest/
 Disallow: /validate/
 Disallow: /smart-check
+Disallow: /check/batch
 
-Sitemap: https://whatsapp-username-checker.onrender.com/sitemap.xml
+# Crawl-delay for polite bots
+Crawl-delay: 1
+
+Sitemap: https://pickmywa.onrender.com/sitemap.xml
